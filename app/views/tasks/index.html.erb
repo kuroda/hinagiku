@@ -5,7 +5,7 @@
   <col class="due_date" />
   <% @tasks.each do |task| %>
   <tr>
-    <td><%= task.name %></td>
+    <td><%= link_to(task.name, task) %></td>
     <td><%= task.due_date %></td>
   </tr>
   <% end %>
