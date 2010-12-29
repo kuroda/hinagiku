@@ -1,0 +1,23 @@
+table.tasks {
+  width: 560px;
+  margin: 5px auto;
+  background-color: #eee;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.tasks tr {
+  border: solid 1px #ccc;
+}
+
+table.tasks td {
+  padding: 5px;
+}
+
+table.tasks col.name {
+  width: 400px;
+}
+
+table.tasks col.due_date {
+  background-color: #ddd;
+}
