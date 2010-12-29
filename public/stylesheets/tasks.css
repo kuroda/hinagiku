@@ -21,3 +21,12 @@ table.tasks col.name {
 table.tasks col.due_date {
   background-color: #ddd;
 }
+
+div#task_due_date {
+  text-align: right;
+  color: #f00;
+}
+div#task_due_date {
+  border: solid 1px #888;
+  padding: 5px;
+}
