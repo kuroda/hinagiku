@@ -1,1 +1,12 @@
 <h1>タスクの一覧</h1>
+
+<table class="tasks">
+  <col class="name" />
+  <col class="due_date" />
+  <% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.name %></td>
+    <td><%= task.due_date %></td>
+  </tr>
+  <% end %>
+</table>
