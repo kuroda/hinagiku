@@ -1,5 +1,15 @@
 <h1>タスクの一覧</h1>
 
+<ul class="navigation">
+<% if params[:action] == "index" %>
+  <li class="selected">未完了タスク</li>
+  <li><%= link_to "完了したタスク", [ :done, :tasks ] %></li>
+<% else %>
+  <li><%= link_to "未完了タスク", :tasks %></li>
+  <li class="selected">完了したタスク</li>
+<% end %>
+</ul>
+
 <table class="tasks">
   <col class="name" />
   <col class="due_date" />
@@ -10,7 +20,11 @@
     <td><%= task.due_date %></td>
     <td>
       <%= link_to "修正", [ :edit, task ] %>
-      <%= link_to "完了", [ :finish, task ], :method => :put %>
+      <%= if task.done?
+        link_to("戻す", [ :unfinish, task ], :method => :put)
+      else
+        link_to("完了", [ :finish, task ], :method => :put)
+      end %>
       <%= link_to "削除", task, :method => :delete,
         :confirm => "本当に削除しますか？" %>
     </td>
