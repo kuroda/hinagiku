@@ -3,12 +3,14 @@
 <table class="tasks">
   <col class="name" />
   <col class="due_date" />
+  <col class="links" />
   <% @tasks.each do |task| %>
   <tr>
-    <td><%= link_to(task.name, task) %></td>
+    <td><%= link_to task.name, task %></td>
     <td><%= task.due_date %></td>
+    <td><%= link_to "修正", [ :edit, task ] %></td>
   </tr>
   <% end %>
 </table>
 
-<%= link_to '新規登録', [ :new, :task ] %>
+<%= link_to "新規登録", [ :new, :task ] %>
