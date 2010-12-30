@@ -19,4 +19,17 @@ class TasksController < ApplicationController
     @task = Task.create(params[:task])
     redirect_to @task
   end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.attributes = params[:task]
+    @task.save
+    redirect_to @task
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to :tasks
+  end
 end
