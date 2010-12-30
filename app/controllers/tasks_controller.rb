@@ -27,6 +27,12 @@ class TasksController < ApplicationController
     redirect_to @task
   end
 
+  def finish
+    @task = Task.find(params[:id])
+    @task.update_attribute(:done, true)
+    redirect_to :back
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
