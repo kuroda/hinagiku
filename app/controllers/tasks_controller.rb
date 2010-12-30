@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.where(:done => false)
+    @tasks = Task.undone
   end
 
   def done
-    @tasks = Task.where(:done => true)
+    @tasks = Task.done
     render :action => "index"
   end
 
