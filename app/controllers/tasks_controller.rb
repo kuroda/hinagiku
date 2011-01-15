@@ -8,6 +8,13 @@ class TasksController < ApplicationController
     render :action => "index"
   end
 
+  def search
+    @tasks = Task.undone
+    @tasks = @tasks.search(params[:q]) if params[:q].present?
+    @tasks = @tasks.paginate(:page => params[:page], :per_page => 10)
+    render :action => "index"
+  end
+
   def show
     @task = Task.find(params[:id])
   end

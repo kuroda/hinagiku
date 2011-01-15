@@ -2,6 +2,6 @@ Nameko::Application.routes.draw do
   root :to => "tasks#index"
   resources :tasks do
     put :finish, :unfinish, :on => :member
-    get :done, :on => :collection
+    get :done, :search, :on => :collection
   end
 end
