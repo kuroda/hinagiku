@@ -1,4 +1,4 @@
-Nameko::Application.routes.draw do
+Hinagiku::Application.routes.draw do
   root :to => "tasks#index"
   resources :tasks do
     put :finish, :unfinish, :on => :member

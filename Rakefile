@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Nameko::Application.load_tasks
+Hinagiku::Application.load_tasks
