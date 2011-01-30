@@ -34,8 +34,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.attributes = params[:task]
-    @task.save
+    @task.update_attributes params[:task]
     redirect_to @task
   end
 
@@ -45,7 +44,7 @@ class TasksController < ApplicationController
     redirect_to :back
   end
 
-  def unfinish
+  def restart
     @task = Task.find(params[:id])
     @task.update_attribute(:done, false)
     redirect_to :back

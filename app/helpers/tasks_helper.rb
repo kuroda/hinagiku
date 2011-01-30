@@ -3,7 +3,7 @@ module TasksHelper
     links = []
     links << link_to("修正", [ :edit, task ])
     if task.done?
-      links << link_to("戻す", [ :unfinish, task ], :method => :put)
+      links << link_to("戻す", [ :restart, task ], :method => :put)
     else
       links << link_to("完了", [ :finish, task ], :method => :put)
     end
