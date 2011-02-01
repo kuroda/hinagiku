@@ -15,7 +15,7 @@ table.tasks td {
 }
 
 table.tasks col.name {
-  width: 360px;
+  width: 320px;
 }
 
 table.tasks col.due_date {
