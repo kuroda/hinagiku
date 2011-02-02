@@ -13,6 +13,7 @@ form ul {
 }
 
 form li {
+  clear: both;
   margin:0;
   padding:0;
 }
@@ -26,4 +27,6 @@ form label {
 
 form textarea {
   height: 150px;
+  width: 430px;
+  float: left;
 }
