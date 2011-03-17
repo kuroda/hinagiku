@@ -1,3 +1,5 @@
+# -*- encoding: UTF-8 -*-
+
 module TasksHelper
   def links_for(task)
     links = []
