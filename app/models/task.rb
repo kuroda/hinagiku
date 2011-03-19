@@ -4,4 +4,6 @@ class Task < ActiveRecord::Base
   scope :search, lambda { |query|
     where([ "name LIKE ?", "%#{query}%" ])
   }
+
+  validates :name, :description, :presence => true
 end
