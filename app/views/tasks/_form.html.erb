@@ -1,11 +1,11 @@
 <%= form_for @task do |form| %>
 <% unless @task.errors.empty? %>
-<p>入力に誤りがあります。</p>
-<ul class="error_messages">
-<% @task.errors.full_messages.each do |message| %>
-<li><%= message %></li>
-<% end %>
-</ul>
+  <p>入力に誤りがあります。</p>
+  <ul class="error_messages">
+  <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
 <% end %>
 <ul>
   <li><%= form.label :name, "名称" %><%= form.text_field :name %></li>
