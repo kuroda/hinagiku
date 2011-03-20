@@ -7,3 +7,9 @@ div.field_with_errors input[type=text],
 div.field_with_errors textarea {
   background-color: #fe8;
 }
+
+ul.error_messages {
+  list-style: square;
+  margin: 15px 30px;
+  color: #f00;
+}
