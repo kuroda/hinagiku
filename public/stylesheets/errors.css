@@ -13,3 +13,8 @@ ul.error_messages {
   margin: 15px 30px;
   color: #f00;
 }
+
+form ul li p.error_message {
+  margin: 0 0 5px 100px;
+  color: #f00;
+}
