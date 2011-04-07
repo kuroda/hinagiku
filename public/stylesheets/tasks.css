@@ -26,7 +26,8 @@ div#task_due_date {
   text-align: right;
   color: #f00;
 }
-div#task_due_date {
+
+div#task_description {
   border: solid 1px #888;
   padding: 5px;
 }
