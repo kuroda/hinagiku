@@ -1,12 +1,14 @@
 <%= form_for @task do |form| %>
 <% unless @task.errors.empty? %>
   <p>入力に誤りがあります。</p>
+  <ul class="error_messages">
+  <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
 <% end %>
 <ul>
-  <li>
-    <%= form.label :name %><%= form.text_field :name %>
-    <%= error_messages(@task, :name) %>
-  </li>
+  <li><%= form.label :name %><%= form.text_field :name %></li>
   <li>
     <%= form.label :due_date %>
     <%= form.date_select :due_date, :use_month_numbers => true,
@@ -14,10 +16,7 @@
       :start_year => Time.now.year, :end_year => Time.now.year + 1 %>
   </li>
   <li><%= form.label :done %><%= form.check_box :done %></li>
-  <li>
-    <%= form.label :description %><%= form.text_area :description %>
-    <%= error_messages(@task, :description) %>
-  </li>
+  <li><%= form.label :description %><%= form.text_area :description %></li>
   <li><%= form.submit "送信" %></li>
 </ul>
 <% end %>
