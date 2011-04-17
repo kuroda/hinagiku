@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
+    @categories = Category.all
   end
 
   def done

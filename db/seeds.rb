@@ -19,3 +19,7 @@ end
   Task.create(:name => "Task #{n}", :description => description,
     :due_date => (n + 3).days.from_now, :done => false)
 end
+
+%w(仕事 生活 趣味).each do |name|
+  Category.create(:name => name)
+end

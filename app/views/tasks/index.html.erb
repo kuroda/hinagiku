@@ -6,6 +6,8 @@
 <%= submit_tag "検索" %>
 <% end %>
 
+<%= render "categories" %>
+
 <ul class="navigation">
 <% if params[:action] == "index" %>
   <li class="selected">未完了タスク</li>

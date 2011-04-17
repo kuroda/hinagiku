@@ -31,3 +31,16 @@ div#task_description {
   border: solid 1px #888;
   padding: 5px;
 }
+
+ul#categories {
+  width: 540px;
+  list-style: none;
+  margin: 15px auto 5px;
+  padding: 10px;
+  border: dotted 1px #ccc;
+}
+
+ul#categories li {
+  display: inline;
+  padding: 5px;
+}
