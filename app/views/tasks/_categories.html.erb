@@ -1,5 +1,5 @@
 <ul id="categories">
-<% @categories.each do |c| %>
+<% Category.all.each do |c| %>
   <li><%= c.name %></li>
 <% end %>
 </ul>

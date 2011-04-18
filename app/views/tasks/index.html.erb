@@ -6,7 +6,7 @@
 <%= submit_tag "検索" %>
 <% end %>
 
-<%= render "categories" %>
+<%= render "categories" if Category.all.present? %>
 
 <ul class="navigation">
 <% if params[:action] == "index" %>
