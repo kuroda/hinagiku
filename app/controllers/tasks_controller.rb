@@ -9,7 +9,12 @@ class TasksController < ApplicationController
   end
 
   def done
-    @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks.done.paginate(:page => params[:page], :per_page => 10)
+    else
+      @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
+    end
     render :index
   end
 

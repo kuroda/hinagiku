@@ -8,18 +8,7 @@
 
 <%= render "categories" if Category.all.present? %>
 
-<ul class="navigation">
-<% if params[:action] == "index" %>
-  <li class="selected">未完了タスク</li>
-<% else %>
-  <li><%= link_to "未完了タスク", :tasks %></li>
-<% end %>
-<% if params[:action] == "done" %>
-  <li class="selected">完了したタスク</li>
-<% else %>
-  <li><%= link_to "完了したタスク", [ :done, :tasks ] %></li>
-<% end %>
-</ul>
+<%= render "navigation" %>
 
 <table class="tasks">
   <col class="name" />
