@@ -44,3 +44,7 @@ ul#categories li {
   display: inline;
   padding: 5px;
 }
+
+ul#categories li.selected {
+  font-weight: bold;
+}
