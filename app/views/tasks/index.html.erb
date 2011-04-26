@@ -25,4 +25,7 @@
 
 <%= will_paginate @tasks, :inner_window => 2, :outer_window => 2 %>
 
-<%= link_to "新規登録", [ :new, :task ] %>
+<div class="menu_items">
+<%= link_to "タスクの新規登録", [ :new, :task ] %>
+<%= link_to "カテゴリーの管理", :categories %>
+</div>

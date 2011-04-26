@@ -1,0 +1,16 @@
+<h1>カテゴリーの管理</h1>
+
+<table class="categories">
+  <col class="name" />
+  <col class="links" />
+  <% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= links_for(category) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="menu_items">
+<%= link_to "タスクの一覧", :tasks %>
+</div>

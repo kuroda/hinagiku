@@ -25,3 +25,15 @@ div#contents {
   padding: 5px;
   border: solid 1px #ccc;
 }
+
+div.menu_items {
+  width: 540px;
+  list-style: none;
+  margin: 15px auto 5px;
+  padding: 10px;
+  border: dotted 1px #ccc;
+}
+
+div.menu_items a {
+  padding: 5px;
+}

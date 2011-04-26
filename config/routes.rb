@@ -4,8 +4,8 @@ Hinagiku::Application.routes.draw do
     put :finish, :restart, :on => :member
     get :done, :search, :on => :collection
   end
-  resources :categories do
-    resources :tasks do
+  resources :categories, :except => [ :show ] do
+    resources :tasks, :only => [ :index ] do
       get :done, :on => :collection
     end
   end
