@@ -6,3 +6,4 @@ ja:
         description: 説明
         due_date: 期限
         done: 実施済み
+        category_id: カテゴリー

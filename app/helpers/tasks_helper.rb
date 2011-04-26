@@ -12,4 +12,12 @@ module TasksHelper
     links << delete_link(task)
     raw(links.join(" "))
   end
+  
+  def category_options
+    options = [ [ "----", nil ] ]
+    Category.all.each do |c|
+      options << [ c.name, c.id ]
+    end
+    options
+  end
 end
