@@ -1,0 +1,12 @@
+<ul class="radio_buttons">
+  <li>
+    <%= form.radio_button(:category_id, nil) %>
+    <%= form.label(:category_id, "----", :value => nil) %>
+  </li>
+  <% Category.all.each do |c| %>
+    <li>
+      <%= form.radio_button(:category_id, c.id) %>
+      <%= form.label(:category_id, c.name, :value => c.id) %>
+    </li>
+  <% end %>
+</ul>
