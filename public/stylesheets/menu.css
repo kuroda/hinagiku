@@ -9,4 +9,9 @@ ul.menu_items {
 ul.menu_items li {
   display: inline-block;
   padding: 5px;
+  font-weight: bold;
+}
+
+ul.menu_items li a {
+  font-weight: normal;
 }
