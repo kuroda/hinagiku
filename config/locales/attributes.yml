@@ -7,3 +7,5 @@ ja:
         due_date: 期限
         done: 実施済み
         category_id: カテゴリー
+      category:
+        name: 名称
