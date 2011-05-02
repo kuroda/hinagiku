@@ -1,12 +1,5 @@
 <%= form_for @category do |form| %>
-<% unless @category.errors.empty? %>
-  <p>入力に誤りがあります。</p>
-  <ul class="error_messages">
-  <% @category.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-  </ul>
-<% end %>
+<%= render "shared/error_messages", :object => @category %>
 <ul>
   <li><%= form.label :name %><%= form.text_field :name %></li>
   <li><%= form.submit "送信" %></li>
