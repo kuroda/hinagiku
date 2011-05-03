@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    redirect_to :categories
+    redirect_to :categories, :status => 301
   end
 
   def new
