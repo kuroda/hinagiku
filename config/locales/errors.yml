@@ -1,10 +1,12 @@
 ja:
   activerecord:
     errors:
-      messages:
-        taken: "「%{value}」はすでに存在します。"
       models:
         task:
           attributes:
             base:
               missing_category: "指定されたカテゴリーは存在しません。"
+        category:
+          attributes:
+            name:
+              taken: "「%{value}」は重複しています。"
