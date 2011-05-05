@@ -3,3 +3,8 @@ ja:
     errors:
       messages:
         taken: "「%{value}」はすでに存在します。"
+      models:
+        task:
+          attributes:
+            base:
+              missing_category: "指定されたカテゴリーは存在しません。"
