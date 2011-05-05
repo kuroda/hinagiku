@@ -1,0 +1,5 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        taken: "「%{value}」はすでに存在します。"
