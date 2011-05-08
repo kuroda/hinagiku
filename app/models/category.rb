@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   has_many :tasks, :dependent => :nullify
   
   validates :name, :presence => true, :length => { :maximum => 10 }
-  validates :name, :uniqueness => true
+  validates :name, :uniqueness => { :case_sensitive => false }
   
   before_validation :normalize_values
   
