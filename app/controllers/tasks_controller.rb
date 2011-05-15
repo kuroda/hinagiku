@@ -40,8 +40,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.attributes = params[:task]
-    if @task.save
+    if @task.update_attributes(params[:task])
       redirect_to @task
     else
       render :edit
