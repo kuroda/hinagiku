@@ -5,10 +5,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-    redirect_to :categories, :status => 301
-  end
-
   def new
     @category = Category.new
   end
