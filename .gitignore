@@ -1,6 +1,8 @@
 .bundle
 .project
+.rake_tasks
 db/*.sqlite3
 log/*.log
 tmp/**/*
-/nbproject/private/
+public/assets
+nbproject
