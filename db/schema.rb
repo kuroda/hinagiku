@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(:version => 20111110141308) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name",            :null => false
+    t.string   "login_name",      :null => false
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+  add_index "users", ["login_name"], :name => "index_users_on_login_name", :unique => true
 
 end

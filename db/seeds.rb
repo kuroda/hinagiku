@@ -1,5 +1,10 @@
 # -*- encoding: UTF-8 -*-
 
+users = []
+users << User.create(:login_name => 'alice', :password => 'hotyoga')
+users << User.create(:login_name => 'bob', :password => 'tiger')
+users << User.create(:login_name => 'carol', :password => 'ocean')
+
 names = [
   "切手を買う",
   "報告書を書く",
