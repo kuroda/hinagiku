@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   clear_helpers
   
+  before_filter :reject_visitors
+  
   rescue_from Exception, :with => :render_500
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
   rescue_from ActionController::RoutingError, :with => :render_404
@@ -13,6 +15,10 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :current_user
+  
+  def reject_visitors
+    redirect_to :new_session unless current_user
+  end
 
   def render_404(exception)
     raise exception unless Rails.env.production?

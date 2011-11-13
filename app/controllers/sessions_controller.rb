@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :reject_visitors
+  
   def create
     user = User.find_by_login_name(params[:login_name])
     if user && user.authenticate(params[:password])
