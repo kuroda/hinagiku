@@ -2,18 +2,18 @@ class TasksController < ApplicationController
   before_filter :prepare, :only => [ :index, :done ]
   
   def index
-    @tasks = @tasks.undone.paginate(:page => params[:page], :per_page => 10)
+    @tasks = @tasks.undone.page(params[:page])
   end
 
   def done
-    @tasks = @tasks.done.paginate(:page => params[:page], :per_page => 10)
+    @tasks = @tasks.done.page(params[:page])
     render :index
   end
 
   def search
     @tasks = Task.undone
     @tasks = @tasks.search(params[:query]) if params[:query].present?
-    @tasks = @tasks.paginate(:page => params[:page], :per_page => 10)
+    @tasks = @tasks.page(params[:page])
     render :index
   end
 
