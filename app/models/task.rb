@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  self.per_page = 10
+
   belongs_to :category
   
   scope :done, where(:done => true).order("due_date DESC")
