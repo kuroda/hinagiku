@@ -2,18 +2,18 @@ class TasksController < ApplicationController
   before_filter :prepare, :only => [ :index, :done ]
   
   def index
-    @tasks = @tasks.undone.page(params[:page])
+    @tasks = @tasks.undone.page(params[:page]).limit(10)
   end
 
   def done
-    @tasks = @tasks.done.page(params[:page])
+    @tasks = @tasks.done.page(params[:page]).limit(10)
     render :index
   end
 
   def search
     @tasks = Task.undone
     @tasks = @tasks.search(params[:query]) if params[:query].present?
-    @tasks = @tasks.page(params[:page])
+    @tasks = @tasks.page(params[:page]).limit(10)
     render :index
   end
 
