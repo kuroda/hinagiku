@@ -1,17 +1,17 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.undone.page(params[:page])
+    @tasks = Task.undone.page(params[:page]).limit(10)
   end
 
   def done
-    @tasks = Task.done.page(params[:page])
+    @tasks = Task.done.page(params[:page]).limit(10)
     render :index
   end
 
   def search
     @tasks = Task.undone
     @tasks = @tasks.search(params[:query]) if params[:query].present?
-    @tasks = @tasks.page(params[:page])
+    @tasks = @tasks.page(params[:page]).limit(10)
     render :index
   end
 
