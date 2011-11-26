@@ -25,6 +25,12 @@ form label {
   padding-top: .2em;
 }
 
+form label.plain {
+  display: inline;
+  width: inherit;
+  float: none;
+}
+
 form textarea {
   height: 150px;
   width: 430px;

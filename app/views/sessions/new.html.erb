@@ -8,6 +8,10 @@
     <%= label_tag :password, 'パスワード' %>
     <%= password_field_tag :password %>
   </li>
+  <li>
+    <%= check_box_tag :remember_me %>
+    <%= label_tag :remember_me, "次回から自動ログイン", :class => 'plain' %>
+  </li>
   <li><%= submit_tag "ログイン" %></li>
 </ul>
 <% end %>
