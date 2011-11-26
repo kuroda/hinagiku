@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(:version => 20111110141308) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login_name",      :null => false
+    t.string   "login_name",       :null => false
     t.string   "password_digest"
+    t.string   "auto_login_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
