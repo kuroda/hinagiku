@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     cookies.delete(:user_id)
+    cookies.delete(:auto_login_token)
     redirect_to :new_session
   end
 end
