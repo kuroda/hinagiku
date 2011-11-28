@@ -2,6 +2,7 @@ require 'nkf'
 
 class Category < ActiveRecord::Base
   has_many :tasks, :dependent => :nullify
+  belongs_to :owner, :class_name => "User"
   
   validates :name, :presence => true, :length => { :maximum => 10 }
   validates :name, :uniqueness => { :case_sensitive => false }
