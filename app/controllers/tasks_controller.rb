@@ -11,14 +11,14 @@ class TasksController < ApplicationController
   end
 
   def search
-    @tasks = Task.undone
+    @tasks = current_user.tasks.undone
     @tasks = @tasks.search(params[:query]) if params[:query].present?
     @tasks = @tasks.page(params[:page]).limit(10)
     render :index
   end
 
   def show
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def new
@@ -26,11 +26,12 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def create
     @task = Task.new(params[:task])
+    @task.owner = current_user
     if @task.save
       redirect_to @task
     else
@@ -39,7 +40,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update_attributes(params[:task])
       redirect_to @task
     else
@@ -48,19 +49,19 @@ class TasksController < ApplicationController
   end
 
   def finish
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.update_attribute(:done, true)
     redirect_to :back
   end
 
   def restart
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.update_attribute(:done, false)
     redirect_to :back
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.destroy
     redirect_to :tasks
   end
@@ -69,10 +70,10 @@ class TasksController < ApplicationController
   
   def prepare
     if params[:category_id]
-      @category = Category.find(params[:category_id])
+      @category = current_user.categories.find(params[:category_id])
       @tasks = @category.tasks
     else
-      @tasks = Task
+      @tasks = current_user.tasks
     end
   end
 end
