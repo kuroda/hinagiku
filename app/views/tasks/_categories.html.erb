@@ -5,7 +5,7 @@
 <% else %>
   <li class="selected">全部</li>
 <% end %>
-<% Category.all.each do |c| %>
+<% current_user.categories.each do |c| %>
   <% if @category != c %>
     <li><%= link_to c.name, [ action, c, :tasks ] %></li>
   <% else %>

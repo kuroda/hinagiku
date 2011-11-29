@@ -2,7 +2,7 @@
 <%= render "shared/error_messages", :object => @task %>
 <ul>
   <li><%= form.label :name %><%= form.text_field :name %></li>
-  <% if Category.all.present? %>
+  <% if current_user.categories.present? %>
   <li><%= form.label :category_id %><%= render "radio_buttons", :form => form %></li>
   <% end %>
   <li>
