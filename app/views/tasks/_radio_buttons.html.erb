@@ -1,9 +1,10 @@
 <ul class="radio_buttons">
   <li>
-    <%= form.radio_button(:category_id, nil) %>
-    <%= form.label(:category_id, "----", :value => nil) %>
+    <%= form.radio_button(:category_id, '',
+      :checked => @task.category_id.nil?) %>
+    <%= form.label(:category_id, "----", :value => '') %>
   </li>
-  <% current_user.categories.each do |c| %>
+  <% Category.all.each do |c| %>
     <li>
       <%= form.radio_button(:category_id, c.id) %>
       <%= form.label(:category_id, c.name, :value => c.id) %>
