@@ -7,10 +7,6 @@ class Task < ActiveRecord::Base
     where([ "name LIKE ?", "%#{query}%" ])
   }
   
-  before_validation do
-    self.category_id = nil if category_id == 0
-  end
-
   validates :name, :presence => true, :length => { :maximum => 20 }
   validates :description, :length => { :maximum => 200 }
   validate :check_association
