@@ -16,19 +16,20 @@ names = [
 description = "これは説明です。" * 20
 
 5.times do |n|
-  Task.create(:name => names[n], :description => description,
+  Task.create({ :name => names[n], :description => description,
     :due_date => (n - 2).days.from_now, :done => n.zero?,
-    :owner => users[0])
+    :owner => users[0] }, :without_protection => true)
 end
 
 200.times do |n|
-  Task.create(:name => "Task #{n}", :description => description,
+  Task.create({ :name => "Task #{n}", :description => description,
     :due_date => (n + 3).days.from_now, :done => false,
-    :owner => users[1])
+    :owner => users[1] }, :without_protection => true)
 end
 
 %w(仕事 生活 趣味).each do |name|
-  Category.create(:name => name, :owner => users[0])
+  Category.create({ :name => name, :owner => users[0] },
+    :without_protection => true)
 end
 
 tasks = Task.order('id').limit(5).all

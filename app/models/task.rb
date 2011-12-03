@@ -2,6 +2,8 @@ class Task < ActiveRecord::Base
   belongs_to :category
   belongs_to :owner, :class_name => "User"
   
+  attr_accessible :name, :description, :due_date, :done, :category_id
+  
   scope :done, where(:done => true).order("due_date DESC")
   scope :undone, where(:done => false).order("due_date")
   scope :search, lambda { |query|
