@@ -1,0 +1,16 @@
+<h1>アカウント情報</h1>
+
+<%= render "tasks/menu" %>
+
+<table id="account">
+  <tr>
+    <th>ユーザー名</th>
+    <td><%= @user.login_name %></td>
+  </tr>
+  <tr>
+    <th>登録日時</th>
+    <td><%= @user.created_at.to_s(:db) %></td>
+  </tr>
+</table>
+
+<div><%= link_to "修正", [ :edit, :account ] %></div>

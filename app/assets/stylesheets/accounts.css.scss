@@ -1,0 +1,21 @@
+table#account {
+  border: 1px dotted #ccc;
+  width: 560px;
+  margin: 15px auto 5px;
+  
+  tr {
+    th, td {
+      padding: 5px;
+    }
+    
+    th {
+      background-color: #444;
+      color: #fff;
+      width: 160px;
+    }
+    
+    td {
+      background-color: #ddd;
+    }
+  }
+}

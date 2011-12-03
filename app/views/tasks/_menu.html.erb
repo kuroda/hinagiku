@@ -2,6 +2,7 @@
   <li><%= link_to_unless_current "タスクの一覧", :tasks %></li>
   <li><%= link_to_unless_current "タスクの新規登録", [ :new, :task ] %></li>
   <li><%= link_to_unless_current "カテゴリーの管理", :categories %></li>
+  <li><%= link_to_unless_current "アカウント", :account %></li>
   <li>
     <%= link_to "ログアウト", :session, :method => :delete,
       :confirm => '本当にログアウトしますか？' %>
