@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   
   attr_accessible :login_name, :password
   
+  validates :login_name, :presence => true, :length => { :maximum => 20 }, :uniqueness => true
+  
   before_create do
     self.auto_login_token = SecureRandom.hex(32)
   end
