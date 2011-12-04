@@ -1,5 +1,5 @@
 <ul class="menu_items">
-  <li><%= link_to_unless_current "タスクの一覧", :tasks %></li>
-  <li><%= link_to_unless_current "タスクの新規登録", [ :new, :task ] %></li>
-  <li><%= link_to_unless_current "カテゴリーの管理", :categories %></li>
+  <li><%= link_to_unless params[:action] == "index", "タスクの一覧", :tasks %></li>
+  <li><%= link_to_unless params[:action] == "new", "タスクの新規登録", [ :new, :task ] %></li>
+  <li><%= link_to "カテゴリーの管理", :categories %></li>
 </ul>
