@@ -1,0 +1,13 @@
+<h1>新規ユーザー登録</h1>
+
+<%= form_for @user, :url => :account do |form| %>
+<%= render "shared/error_messages", :object => @user %>
+<ul>
+  <li><%= form.label :login_name %><%= form.text_field :login_name %></li>
+  <%= form.fields_for :emails do |fields| %>
+    <li><%= fields.label :address %><%= fields.text_field :address %></li>
+  <% end%>
+  <li><%= form.label :password %><%= form.password_field :password %></li>
+  <li><%= form.submit "送信" %></li>
+</ul>
+<% end %>

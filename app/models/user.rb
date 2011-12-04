@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
   has_many :categories, :foreign_key => 'owner_id', :dependent => :destroy
   has_many :emails, :dependent => :destroy
   
-  attr_accessible :login_name, :password
+  attr_accessible :login_name, :password, :emails_attributes
+  
+  accepts_nested_attributes_for :emails
   
   validates :login_name, :presence => true, :length => { :maximum => 20 }, :uniqueness => true
   
