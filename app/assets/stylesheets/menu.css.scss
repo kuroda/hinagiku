@@ -15,3 +15,14 @@ ul.menu_items li {
 ul.menu_items li a {
   font-weight: normal;
 }
+
+ul.user_menu_items {
+  list-style: none;
+  text-align: right;
+  margin: 0 15px;
+  
+  li {
+    display: inline-block;
+    padding: 5px;
+  }
+}

@@ -1,6 +1,6 @@
 <h1>アカウント情報</h1>
 
-<%= render "tasks/menu" %>
+<%= render "menu" %>
 
 <table id="account">
   <tr>
@@ -12,5 +12,3 @@
     <td><%= current_user.created_at.to_s(:db) %></td>
   </tr>
 </table>
-
-<div><%= link_to "修正", [ :edit, :account ] %></div>
