@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127043430) do
+ActiveRecord::Schema.define(:version => 20111204114213) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(:version => 20111127043430) do
     t.datetime "updated_at"
     t.integer  "owner_id",   :null => false
   end
+
+  create_table "emails", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "address"
+    t.string   "lower_case_address"
+    t.string   "verification_code"
+    t.datetime "verified_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "emails", ["lower_case_address"], :name => "index_emails_on_lower_case_address", :unique => true
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
@@ -36,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20111127043430) do
     t.string   "auto_login_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "verified_at"
   end
 
   add_index "users", ["login_name"], :name => "index_users_on_login_name", :unique => true
