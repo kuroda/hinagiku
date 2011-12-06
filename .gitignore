@@ -1,5 +1,6 @@
 .bundle
 .project
+.sass-cache
 .rake_tasks
 db/*.sqlite3
 log/*.log

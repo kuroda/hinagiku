@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20111204114213) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "owner_id",   :null => false
   end
 
@@ -25,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20111204114213) do
     t.string   "lower_case_address"
     t.string   "verification_code"
     t.datetime "verified_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   add_index "emails", ["lower_case_address"], :name => "index_emails_on_lower_case_address", :unique => true
@@ -36,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20111204114213) do
     t.text     "description"
     t.date     "due_date"
     t.boolean  "done"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "category_id"
     t.integer  "owner_id",    :null => false
   end
@@ -46,8 +47,8 @@ ActiveRecord::Schema.define(:version => 20111204114213) do
     t.string   "login_name",       :null => false
     t.string   "password_digest"
     t.string   "auto_login_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.datetime "verified_at"
   end
 

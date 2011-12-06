@@ -13,8 +13,8 @@ ja:
         login_name: ユーザー名
         password: パスワード
         password_digest: パスワード
-        emails:
-          address: メールアドレス
-          lower_case_address: メールアドレス
+      user/emails:
+        address: メールアドレス
+        lower_case_address: メールアドレス
       email:
         address: メールアドレス
