@@ -14,12 +14,12 @@ class User < ActiveRecord::Base
     :length => { :minimum => 4, :allow_nil=> true },
     :confirmation => true
   
-  before_create do
-    self.auto_login_token = SecureRandom.hex(32)
-  end
-  
   before_save do
     self.password_digest = BCrypt::Password.create(password) if password
+  end
+  
+  before_create do
+    self.auto_login_token = SecureRandom.hex(32)
   end
   
   def authenticate(unencrypted_password)

@@ -8,5 +8,11 @@ class Email < ActiveRecord::Base
   end
   
   validates :address, :presence => true
-  validates :lower_case_address, :uniqueness => true
+  validate do
+    emails = Email.where(:lower_case_address)
+    emails = emails.where([ "id <> ?", id ]) if id
+    if emails.present?
+      errors.add(:address, :taken)
+    end
+  end
 end
