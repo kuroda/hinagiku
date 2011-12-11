@@ -3,3 +3,5 @@
 Hinagiku へようこそ！
 
 次のURLにアクセスして、ユーザー登録を完了してください。
+<%= email_verification_path(:id => user.id,
+  :token => user.email_verification_token) %>

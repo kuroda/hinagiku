@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
-  skip_before_filter :reject_visitors, :only => [ :new, :create ]
+  skip_before_filter :reject_visitors,
+    :only => [ :new, :create, :verify ]
   
   def show
   end
@@ -31,5 +32,19 @@ class AccountsController < ApplicationController
   end
   
   def thanks
+  end
+  
+  def verify
+    @user = User.find_by_id(params[:id])
+    if @user.try(:email_verification_token) == params[:token]
+      if @user.updated_at >= 24.hours.ago
+        @user.update_attribute(:verified_at, Time.current)
+        render :verified
+      else
+        render :token_expired
+      end
+    else
+      render :not_verified
+    end
   end
 end
