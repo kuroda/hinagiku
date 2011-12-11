@@ -11,6 +11,9 @@ ja:
         name: 名称
       user:
         login_name: ユーザー名
+        address: メールアドレス
         password: パスワード
       user/emails:
+        address: メールアドレス
+      email:
         address: メールアドレス

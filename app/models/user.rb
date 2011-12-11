@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
   has_many :emails, :dependent => :destroy
   
   attr_accessor :password
-  attr_accessible :login_name, :password
-  
+  attr_accessible :login_name, :password, :emails_attributes
+
+  accepts_nested_attributes_for :emails
+
   validates :login_name, :presence => true, :length => { :maximum => 20 },
     :uniqueness => true
   validates :password,
