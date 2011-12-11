@@ -4,7 +4,7 @@ class CreateEmails < ActiveRecord::Migration
       t.belongs_to :user, :null => true
       t.string :address
       t.string :lower_case_address
-      t.string :verification_code
+      t.string :verification_token
       t.datetime :verified_at
 
       t.timestamps

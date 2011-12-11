@@ -1,5 +1,7 @@
-<%= @user.login_name %> 様
+<%= @email.user.login_name %> 様
 
 Hinagiku へようこそ！
 
 次のURLにアクセスして、ユーザー登録を完了してください。
+<%= email_verification_path(:id => @email.id,
+  :token => @email.verification_token, :only_path => false) %>

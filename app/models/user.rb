@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
     password_digest &&
       BCrypt::Password.new(password_digest) == unencrypted_password
   end
+  
+  def has_verified_email?
+    emails.where("emails.verified_at IS NOT NULL").present?
+  end
 end

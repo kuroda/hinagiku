@@ -85,6 +85,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail-iso-2022-jp (1.1.4)
+      mail (>= 2.2.5)
     mime-types (1.17.2)
     multi_json (1.0.4)
     polyglot (0.3.3)
@@ -122,6 +124,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   journey (~> 1.0.0)!
   jquery-rails
+  mail-iso-2022-jp
   rails (>= 3.2.0.beta)!
   rails-i18n
   rake (~> 0.9.3.beta1)

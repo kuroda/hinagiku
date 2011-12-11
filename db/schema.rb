@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20111204114213) do
     t.integer  "user_id"
     t.string   "address"
     t.string   "lower_case_address"
-    t.string   "verification_code"
+    t.string   "verification_token"
     t.datetime "verified_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

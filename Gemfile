@@ -9,6 +9,7 @@ gem 'will_paginate', '~> 3.0.0'
 gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'mail-iso-2022-jp'
 
 group :assets do
   gem "sass-rails", ">= 3.1.1.alpha.0", :git => "git://github.com/rails/sass-rails.git"

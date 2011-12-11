@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
-  skip_before_filter :reject_visitors, :only => [ :new, :create ]
+  skip_before_filter :reject_visitors,
+    :only => [ :new, :create, :verify ]
   
   def show
   end
@@ -28,6 +29,19 @@ class AccountsController < ApplicationController
       redirect_to :account
     else
       render :edit
+    end
+  end
+  
+  def thanks
+  end
+  
+  def verify
+    @email = Email.find_by_id(params[:id])
+    if @email.try(:verification_token) == params[:token]
+      @email.update_attribute(:verified_at, Time.current)
+      render :verified
+    else
+      render :not_verified
     end
   end
 end

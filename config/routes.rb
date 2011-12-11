@@ -13,6 +13,9 @@ Hinagiku::Application.routes.draw do
   resource :account do
     get :thanks
   end
-  
+  get 'v/:id/:token' => 'accounts#verify',
+    :id => /\d+/, :token => /[0-9a-f]+/,
+    :as => :email_verification
+ 
   match '*anything' => 'errors#not_found'
 end
