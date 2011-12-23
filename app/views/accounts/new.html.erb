@@ -3,11 +3,24 @@
 <%= form_for @user, :url => :account do |form| %>
 <%= render "shared/error_messages", :object => form.object %>
 <ul>
-  <li><%= form.label :login_name %><%= form.text_field :login_name %></li>
+  <li>
+    <%= form.label :login_name %>
+    <%= form.text_field :login_name %>
+  </li>
   <%= form.fields_for :emails do |fields| %>
-    <li><%= fields.label :address %><%= fields.email_field :address %></li>
+    <li>
+      <%= fields.label :address %>
+      <%= fields.email_field :address %>
+    </li>
   <% end%>
-  <li><%= form.label :password %><%= form.password_field :password %></li>
+  <li>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </li>
+  <li>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </li>
   <li><%= form.submit "送信" %></li>
 </ul>
 <% end %>

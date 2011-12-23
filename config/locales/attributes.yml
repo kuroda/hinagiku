@@ -13,6 +13,10 @@ ja:
         login_name: ユーザー名
         address: メールアドレス
         password: パスワード
+        password_confirmation: パスワードの確認
+        current_password: 現在のパスワード
+        new_password: 新しいパスワード
+        new_password_confirmation: 新しいパスワードの確認
       user/emails:
         address: メールアドレス
       email:

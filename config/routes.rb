@@ -15,6 +15,9 @@ Hinagiku::Application.routes.draw do
     resource :initial_email, :only => [ :edit, :update ] do
       get :updated
     end
+    resource :password, :only => [ :edit, :update ] do
+      get :updated
+    end
   end
   get 'v/:id/:token' => 'accounts#verify',
     :id => /\d+/, :token => /[0-9a-f]+/,

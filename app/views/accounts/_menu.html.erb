@@ -1,6 +1,7 @@
 <ul class="menu_items">
   <li><%= link_to_unless params[:action] == "show", "アカウント情報", :account %></li>
   <li><%= link_to_unless_current "アカウント情報の修正", [ :edit, :account ] %></li>
+  <li><%= link_to_unless_current "パスワードの変更", [ :edit, :account, :password ] %></li>
   <% if current_user.verified? %>
   <li><%= link_to "タスクの一覧に戻る", :tasks %></li>
   <% else %>
