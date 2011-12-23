@@ -27,7 +27,7 @@ Hinagiku::Application.routes.draw do
   get 'p/:id/:token' => 'password_recovery#continue',
     :id => /\d+/, :token => /[0-9a-f]+/,
     :as => :password_recovery_continue
-  put 'password_recovery/execute'
+  post 'password_recovery/execute'
   get 'password_recovery/done'
    
   match '*anything' => 'errors#not_found'
