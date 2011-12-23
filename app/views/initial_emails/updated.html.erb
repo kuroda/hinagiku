@@ -1,5 +1,3 @@
 <h1>確認メールの再送信</h1>
 
-<p><%= current_user.emails.last.address %>宛てに確認メールを送りました。</p>
-<p>メール本文に記載されたURLにアクセスしてユーザー登録を完了してください。</p>
-<p><%= link_to 'もう一度送る', :edit_account_initial_email %></p>
+<%= render 'shared/email_confirmation_sent' %>

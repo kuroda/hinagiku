@@ -1,0 +1,3 @@
+<p><%= current_user.emails.first.address %>宛てに確認メールを送りました。</p>
+<p>メール本文に記載されたURLにアクセスしてユーザー登録を完了してください。</p>
+<p><%= link_to 'もう一度送る', :edit_account_initial_email %></p>

@@ -5,11 +5,11 @@ class InitialEmailsController < ApplicationController
   end
   
   def edit
-    @email = current_user.emails.order('id').first    
+    @email = current_user.emails.first
   end
   
   def update
-    @email = current_user.emails.order('id').first    
+    @email = current_user.emails.first
     @email.attributes = params[:email]
     if @email.save
       AccountMailer.email_verification(@email).deliver
@@ -20,6 +20,6 @@ class InitialEmailsController < ApplicationController
   end
   
   def updated
-    @email = current_user.emails.order('id').first
+    @email = current_user.emails.first
   end
 end
