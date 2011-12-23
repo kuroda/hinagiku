@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   clear_helpers
   
-  before_filter :reject_visitors
+  before_filter :authenticate_user
   
   rescue_from Exception, :with => :render_500
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
   
-  def reject_visitors
+  def authenticate_user
     redirect_to :new_session unless current_user
   end
 

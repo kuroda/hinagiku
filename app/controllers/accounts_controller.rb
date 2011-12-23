@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  skip_before_filter :reject_visitors,
+  skip_before_filter :authenticate_user,
     :only => [ :new, :create, :verify ]
   
   def show
