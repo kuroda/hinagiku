@@ -21,15 +21,11 @@ class User < ActiveRecord::Base
   end
   
   before_create do
-    self.auto_login_token = SecureRandom.hex(32)
+    self.auto_login_token = SecureRandom.hex
   end
   
   def authenticate(unencrypted_password)
     password_digest &&
       BCrypt::Password.new(password_digest) == unencrypted_password
-  end
-  
-  def has_verified_email?
-    emails.where("emails.verified_at IS NOT NULL").present?
   end
 end

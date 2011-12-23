@@ -17,20 +17,12 @@ class Email < ActiveRecord::Base
   end
   
   before_create do
-    self.verification_token = SecureRandom.hex(32)
+    self.verification_token = SecureRandom.hex
   end
   
   after_save do
-    if verified_at_changed?
-      if verified_at
-        unless user.verified_at
-          user.update_attribute(:verified_at, verified_at)
-        end
-      else
-        unless user.has_verified_email?
-          user.update_attribute(:verified_at, nil)
-        end
-      end
+    if verified_at && !user.verified_at
+      user.update_attribute(:verified_at, verified_at)
     end
   end
 end
