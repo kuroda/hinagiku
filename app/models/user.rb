@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
     password_digest &&
       BCrypt::Password.new(password_digest) == unencrypted_password
   end
+  
+  def verified?
+    !!verified_at
+  end
 end

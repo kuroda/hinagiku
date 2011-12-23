@@ -1,7 +1,7 @@
 <h1>新規ユーザー登録</h1>
 
 <%= form_for @user, :url => :account do |form| %>
-<%= render "shared/error_messages", :object => @user %>
+<%= render "shared/error_messages", :object => form.object %>
 <ul>
   <li><%= form.label :login_name %><%= form.text_field :login_name %></li>
   <%= form.fields_for :emails do |fields| %>

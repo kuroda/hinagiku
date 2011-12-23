@@ -16,8 +16,10 @@ class Email < ActiveRecord::Base
     end
   end
   
-  before_create do
-    self.verification_token = SecureRandom.hex
+  before_save do
+    if address_changed?
+      self.verification_token = SecureRandom.hex
+    end
   end
   
   after_save do
