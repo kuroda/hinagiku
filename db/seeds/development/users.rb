@@ -1,14 +1,10 @@
-# -*- encoding: UTF-8 -*-
-
-users = []
-users << User.create(:login_name => 'alice', :password => 'hotyoga')
-users << User.create(:login_name => 'bob', :password => 'tiger')
-users << User.create(:login_name => 'carol', :password => 'ocean')
-
-users.each do |user|
-  user.emails << Email.new(
+%w(alice bob carol).each_with_index do |name, index|
+  user = User.new(:login_name => name)
+  user.setting_password = true
+  user.password = 'password'
+  user.save!
+  email = Email.new(
     :address => user.login_name + '@example.com')
+  email.verified_at = Time.current if index <= 1
+  user.emails << email
 end
-
-users[0].emails.first.update_attribute(:verified_at, Time.current)
-users[1].emails.first.update_attribute(:verified_at, Time.current)

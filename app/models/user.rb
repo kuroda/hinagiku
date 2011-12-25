@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   has_many :categories, :foreign_key => 'owner_id', :dependent => :destroy
   has_many :emails, :dependent => :destroy
   
-  attr_accessor :password, :password_confirmation, :changing_password,
+  attr_accessor :setting_password, :changing_password,
+    :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation
   attr_accessible :login_name, :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
@@ -15,16 +16,20 @@ class User < ActiveRecord::Base
 
   validates :login_name, :presence => true, :length => { :maximum => 20 },
     :uniqueness => true
-  validates :password,
-    :length => { :minimum => 4, :allow_nil=> true },
+  validates :password, :presence => { :if => :setting_password },
+    :length => { :minimum => 4, :allow_blank => true },
     :confirmation => true
-  validates :current_password, :new_password,
-    :presence => { :if => :changing_password },
+  validates :current_password, :presence => { :if => :changing_password }
+  validates :new_password, :presence => { :if => :changing_password },
+    :length => { :minimum => 4, :allow_blank => true },
     :confirmation => true
 
   before_save do
-    self.password = new_password if changing_password
-    self.password_digest = BCrypt::Password.create(password) if password
+    if changing_password
+      self.password_digest = BCrypt::Password.create(new_password)
+    elsif setting_password
+      self.password_digest = BCrypt::Password.create(password)
+    end
   end
   
   before_create do
