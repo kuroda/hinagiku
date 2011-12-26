@@ -14,4 +14,8 @@ ul.error_messages {
   list-style: square;
   margin: 15px 30px;
   color: $red;
+  
+  li {
+    text-align: left;
+  }
 }

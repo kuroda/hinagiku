@@ -15,20 +15,28 @@ form ul {
 form li {
   clear: both;
   margin: 0;
-  padding: 0;
+  padding: 0.2em;
+  text-align: center;
 }
 
 form label {
   display: block;
-  width: 100px;
+  width: 200px;
+  text-align: right;
   float: left;
-  padding-top: .2em;
+  padding-right: .2em;
 }
 
 form label.plain {
   display: inline;
   width: inherit;
   float: none;
+}
+
+form li input[type="text"],
+form li input[type="email"],
+form li input[type="password"] {
+  float: left;
 }
 
 form textarea {
