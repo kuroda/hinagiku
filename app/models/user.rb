@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   attr_accessible :login_name, :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
     :emails_attributes
+  alias_method :setting_password?, :setting_password
+  alias_method :changing_password? , :changing_password
 
   accepts_nested_attributes_for :emails
 
@@ -18,24 +20,24 @@ class User < ActiveRecord::Base
     :uniqueness => true
 
   validate do
-    if changing_password
+    if changing_password?
       unless authenticate(current_password)
         errors.add(:current_password, :invalid)
       end
     end
   end
 
-  validates :password, :presence => { :if => :setting_password }
+  validates :password, :presence => { :if => :setting_password? }
   validates :current_password, :new_password,
-    :presence => { :if => :changing_password }
+    :presence => { :if => :changing_password? }
   validates :password, :new_password,
     :length => { :minimum => 4, :allow_blank => true },
     :confirmation => true
 
   before_save do
-    if changing_password
+    if changing_password?
       self.password_digest = BCrypt::Password.create(new_password)
-    elsif setting_password
+    elsif setting_password?
       self.password_digest = BCrypt::Password.create(password)
     end
   end
