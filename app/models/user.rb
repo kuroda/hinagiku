@@ -19,6 +19,15 @@ class User < ActiveRecord::Base
   validates :password, :presence => { :if => :setting_password },
     :length => { :minimum => 4, :allow_blank => true },
     :confirmation => true
+
+  validate do
+    if changing_password
+      unless authenticate(current_password)
+        errors.add(:current_password, :invalid)
+      end
+    end
+  end
+
   validates :current_password, :presence => { :if => :changing_password }
   validates :new_password, :presence => { :if => :changing_password },
     :length => { :minimum => 4, :allow_blank => true },

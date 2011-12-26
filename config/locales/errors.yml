@@ -14,3 +14,7 @@ ja:
           attributes:
             lower_case_address:
               taken: "「%{value}」は他のユーザーが使用しています。"
+        user:
+          attributes:
+            current_password:
+              invalid: "が正しくありません。"
