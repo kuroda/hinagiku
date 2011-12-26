@@ -16,9 +16,6 @@ class User < ActiveRecord::Base
 
   validates :login_name, :presence => true, :length => { :maximum => 20 },
     :uniqueness => true
-  validates :password, :presence => { :if => :setting_password },
-    :length => { :minimum => 4, :allow_blank => true },
-    :confirmation => true
 
   validate do
     if changing_password
@@ -28,8 +25,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  validates :current_password, :presence => { :if => :changing_password }
-  validates :new_password, :presence => { :if => :changing_password },
+  validates :password, :presence => { :if => :setting_password }
+  validates :current_password, :new_password,
+    :presence => { :if => :changing_password }
+  validates :password, :new_password,
     :length => { :minimum => 4, :allow_blank => true },
     :confirmation => true
 
