@@ -1,4 +1,4 @@
-<h1>新規ユーザー登録</h1>
+<%= render 'shared/menu_items_for_visitors' %>
 
 <%= form_for @user, :url => :account do |form| %>
 <%= render "shared/error_messages", :object => form.object %>
