@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 
   validates :login_name, :presence => true, :length => { :maximum => 20 },
     :uniqueness => true
+  validates :display_name, :presence => true, :length => { :maximum => 20 }
 
   validate do
     if changing_password?

@@ -10,7 +10,8 @@ ja:
       category:
         name: 名称
       user:
-        login_name: ユーザー名
+        login_name: ログイン名
+        display_name: 表示用の名前
         address: メールアドレス
         password: パスワード
         password_confirmation: パスワードの確認

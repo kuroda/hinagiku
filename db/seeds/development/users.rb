@@ -1,5 +1,7 @@
 %w(alice bob carol).each_with_index do |name, index|
-  user = User.new(:login_name => name)
+  user = User.new
+  user.login_name = name
+  user.display_name = name.capitalize
   user.setting_password = true
   user.password = 'password'
   user.save!

@@ -7,6 +7,10 @@
     <%= form.label :login_name %>
     <%= form.text_field :login_name %>
   </li>
+  <li>
+    <%= form.label :display_name %>
+    <%= form.text_field :display_name %>
+  </li>
   <%= form.fields_for :emails do |fields| %>
     <li>
       <%= fields.label :address %>

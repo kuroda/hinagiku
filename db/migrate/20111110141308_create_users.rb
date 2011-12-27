@@ -2,6 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :login_name, :null => false
+      t.string :display_name, :null => false
       t.string :password_digest
       t.string :auto_login_token
 

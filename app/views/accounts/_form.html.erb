@@ -1,7 +1,14 @@
 <%= form_for current_user, :url => :account do |form| %>
 <%= render "shared/error_messages", :object => current_user %>
 <ul>
-  <li><%= form.label :login_name %><%= form.text_field :login_name %></li>
+  <li>
+    <%= form.label :login_name %>
+    <%= form.text_field :login_name %>
+  </li>
+  <li>
+    <%= form.label :display_name %>
+    <%= form.text_field :display_name %>
+  </li>
   <li><%= form.submit "送信" %></li>
 </ul>
 <% end %>
