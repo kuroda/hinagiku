@@ -1,20 +1,29 @@
 table.categories {
   width: 560px;
   margin: 5px auto;
+  color: #444;
   background-color: #eee;
   border-collapse: collapse;
   border-spacing: 0;
-}
 
-table.categories tr {
-  border: solid 1px #ccc;
-}
-
-table.categories td {
-  padding: 5px;
-}
-
-table.categories col.name {
-  width: 320px;
-  background-color: #ddd;
+  tr:nth-child(even) {
+    background-color: #9dd2de;
+  }
+  
+  td {
+    padding: 5px;
+  }
+  
+  td:nth-child(2) {
+    text-align: center;
+    
+    a {
+      color: #444;
+    }
+  }
+  
+  col.name {
+    width: 400px;
+    background-color: #ddd;
+  }
 }

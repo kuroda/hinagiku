@@ -2,13 +2,4 @@
 
 <%= render "menu" %>
 
-<table id="account">
-  <tr>
-    <th>ユーザー名</th>
-    <td><%= current_user.login_name %></td>
-  </tr>
-  <tr>
-    <th>登録日時</th>
-    <td><%= current_user.created_at.to_s(:db) %></td>
-  </tr>
-</table>
+<%= render 'form' %>

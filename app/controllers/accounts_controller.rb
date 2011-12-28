@@ -11,9 +11,6 @@ class AccountsController < ApplicationController
     @user.emails.build
   end
   
-  def edit
-  end
-  
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -29,7 +26,7 @@ class AccountsController < ApplicationController
     if current_user.update_attributes(params[:user])
       redirect_to :account
     else
-      render :edit
+      render :show
     end
   end
   

@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   attr_accessor :setting_password, :changing_password,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation
-  attr_accessible :login_name, :password, :password_confirmation,
+  attr_accessible :login_name, :display_name,
+    :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
     :emails_attributes
   alias_method :setting_password?, :setting_password

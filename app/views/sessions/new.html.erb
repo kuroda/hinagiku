@@ -1,19 +1,17 @@
-<%= render 'shared/menu_items_for_visitors' %>
-
 <%= form_tag :session do %>
 <ul>
   <li>
-    <%= label_tag :login_name, 'ユーザー名' %>
+    <%= label_tag :login_name, 'ログイン名' %>
     <%= text_field_tag :login_name %>
   </li>
   <li>
     <%= label_tag :password, 'パスワード' %>
     <%= password_field_tag :password %>
   </li>
-  <li>
+  <li style="text-align: center">
     <%= check_box_tag :remember_me %>
     <%= label_tag :remember_me, "次回から自動ログイン", :class => 'plain' %>
   </li>
-  <li><%= submit_tag "ログイン" %></li>
+  <li class="buttons"><%= submit_tag "ログイン" %></li>
 </ul>
 <% end %>

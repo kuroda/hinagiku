@@ -10,7 +10,7 @@ Hinagiku::Application.routes.draw do
     end
   end
   resource :session, :only => [ :new, :create, :destroy ]
-  resource :account do
+  resource :account, :except => [ :edit ] do
     get :thanks
     resource :initial_email, :only => [ :edit, :update ] do
       get :updated

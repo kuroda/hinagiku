@@ -1,0 +1,5 @@
+<%= form_tag [ :search, :tasks ], :method => :get,
+  :class => "search" do %>
+<%= text_field_tag "query", params[:query] %>
+<%= submit_tag "検索" %>
+<% end %>

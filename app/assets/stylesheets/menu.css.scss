@@ -1,28 +1,35 @@
-ul.menu_items {
-  width: 540px;
-  list-style: none;
-  margin: 15px auto 5px;
-  padding: 10px;
-  border: dotted 1px #ccc;
-}
-
-ul.menu_items li {
-  display: inline-block;
-  padding: 5px;
-  font-weight: bold;
-}
-
-ul.menu_items li a {
-  font-weight: normal;
-}
-
 ul.user_menu_items {
+  float: right;
   list-style: none;
-  text-align: right;
-  margin: 0 15px;
+  margin-top: 54px;
+  padding: 10px;
+  color: #444;
   
   li {
     display: inline-block;
     padding: 5px;
+    
+    a {
+      font-weight: normal;
+      color: #444;
+    }
+  }
+}
+
+ul.menu_items {
+  list-style: none;
+  color: #444;
+  border: dotted #ccc 1px;
+  margin: 0 10px;
+  padding: 2px 5px;
+  
+  li {
+    display: inline-block;
+    padding: 5px;
+    font-size: 90%;
+    
+    a {
+      font-weight: normal;
+    }
   }
 }

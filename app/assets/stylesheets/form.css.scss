@@ -1,55 +1,81 @@
+$r: 3px;
+
 form {
-  width: 540px;
-  margin: 4px auto;
-  background-color: #cff;
+  margin: 15px 10px;
+  background-color: #9dd2de;
+  color: #444;
   padding: 10px;
-  border: solid 1px #ccc;
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      clear: both;
+      margin: 0;
+      padding: 0.2em;
+      
+      label {
+        display: block;
+        width: 200px;
+        text-align: right;
+        float: left;
+        padding-right: .2em;
+      }
+      
+      label.plain {
+        display: inline;
+        width: inherit;
+        float: none;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        float: left;
+      }
+      
+      textarea {
+        height: 150px;
+        width: 300px;
+        float: left;
+      }
+      
+      input[type="submit"] {
+        background-color: #555;
+        color: #fff;
+        text-shadow: -1px -1px 0 #333;
+        border-radius: $r;
+        -moz-border-radius: $r;
+        -webkit-border-radius: $r;
+        border: 1px solid #888;
+        padding: 5px 20px;
+        letter-spacing: 3px;
+        cursor: pointer;
+      }
+    }
+    
+    li.buttons {
+      text-align: center;
+      padding: 10px 15px 0 0;
+    }
+  }
+
+  ul.radio_buttons {
+    display: inline-block;
+    
+    label {
+      display: inline;
+      float: none;
+    }
+  }
 }
 
-form ul {
-  list-style: none;
-  margin: 0;
+form.search {
+  background-color: transparent;
+  float: right;
+  
+  margin: 10px 5px;
   padding: 0;
-}
-
-form li {
-  clear: both;
-  margin: 0;
-  padding: 0.2em;
-  text-align: center;
-}
-
-form label {
-  display: block;
-  width: 200px;
-  text-align: right;
-  float: left;
-  padding-right: .2em;
-}
-
-form label.plain {
-  display: inline;
-  width: inherit;
-  float: none;
-}
-
-form li input[type="text"],
-form li input[type="email"],
-form li input[type="password"] {
-  float: left;
-}
-
-form textarea {
-  height: 150px;
-  width: 430px;
-  float: left;
-}
-
-form ul.radio_buttons {
-  display: inline-block;
-}
-
-form ul.radio_buttons label {
-  display: inline;
-  float: none;
 }
