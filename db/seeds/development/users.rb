@@ -3,10 +3,10 @@
   user.login_name = name
   user.display_name = name.capitalize
   user.setting_password = true
-  user.password = 'password'
+  user.password = "password"
   user.save!
   email = Email.new(
-    :address => user.login_name + '@example.com')
+    :address => user.login_name + "@example.com")
   email.verified_at = Time.current if index <= 1
   user.emails << email
 end

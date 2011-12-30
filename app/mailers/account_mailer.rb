@@ -6,6 +6,6 @@ class AccountMailer < ActionMailer::Base
   def email_verification(email)
     @email = email
     mail(:to => email.address,
-      :subject => '[Hinagiku] メールアドレスの確認')
+      :subject => "[Hinagiku] メールアドレスの確認")
   end
 end

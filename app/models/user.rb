@@ -1,8 +1,8 @@
-require 'bcrypt'
+require "bcrypt"
 
 class User < ActiveRecord::Base
-  has_many :tasks, :foreign_key => 'owner_id', :dependent => :destroy
-  has_many :categories, :foreign_key => 'owner_id', :dependent => :destroy
+  has_many :tasks, :foreign_key => "owner_id", :dependent => :destroy
+  has_many :categories, :foreign_key => "owner_id", :dependent => :destroy
   has_many :emails, :dependent => :destroy
   
   attr_accessor :setting_password, :changing_password,
