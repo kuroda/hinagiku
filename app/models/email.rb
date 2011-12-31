@@ -3,18 +3,8 @@ class Email < ActiveRecord::Base
   
   attr_accessible :address
   
-  before_validation do
-    self.lower_case_address = address.downcase if address.present?
-  end
-  
-  validates :address, :presence => true
-  validate do
-    emails = Email.where(:lower_case_address)
-    emails = emails.where([ "id <> ?", id ]) if id
-    if emails.present?
-      errors.add(:address, :taken)
-    end
-  end
+  validates :address, :presence => true,
+    :uniqueness => { :case_sensitive => false }
   
   before_save do
     if address_changed?

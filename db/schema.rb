@@ -23,14 +23,13 @@ ActiveRecord::Schema.define(:version => 20111223141416) do
   create_table "emails", :force => true do |t|
     t.integer  "user_id"
     t.string   "address"
-    t.string   "lower_case_address"
     t.string   "verification_token"
     t.datetime "verified_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "emails", ["lower_case_address"], :name => "index_emails_on_lower_case_address", :unique => true
+  add_index "emails", ["address"], :name => "index_emails_on_address", :unique => true
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
@@ -46,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20111223141416) do
   create_table "users", :force => true do |t|
     t.string   "login_name",              :null => false
     t.string   "display_name",            :null => false
-    t.string   "password_digest"
+    t.string   "password_digest",         :null => false
     t.string   "auto_login_token"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
