@@ -3,7 +3,7 @@
   user.login_name = name
   user.display_name = name.capitalize
   user.setting_password = true
-  user.password = "password"
+  user.password = "opensesame!"
   user.save!
   email = Email.new(
     :address => user.login_name + "@example.com")
