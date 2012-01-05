@@ -3,8 +3,7 @@
 alice = User.find_by_login_name("alice")
 
 %w(仕事 生活 趣味).each do |name|
-  Category.create({ :name => name, :owner => alice },
-    :without_protection => true)
+  Category.create({ :name => name, :owner => alice }, :without_protection => true)
 end
 
 tasks = Task.order("id").limit(5).all
