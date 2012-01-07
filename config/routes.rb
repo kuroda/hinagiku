@@ -29,6 +29,6 @@ Hinagiku::Application.routes.draw do
     :as => :password_recovery_continue
   post "password_recovery/execute"
   get "password_recovery/done"
-   
+
   match "*anything" => "errors#not_found"
 end

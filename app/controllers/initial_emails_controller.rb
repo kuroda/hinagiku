@@ -3,11 +3,11 @@ class InitialEmailsController < ApplicationController
   before_filter do
     redirect_to :root if current_user.verified?
   end
-  
+
   def edit
     @email = current_user.emails.first
   end
-  
+
   def update
     @email = current_user.emails.first
     @email.attributes = params[:email]
@@ -18,7 +18,7 @@ class InitialEmailsController < ApplicationController
       render :edit
     end
   end
-  
+
   def updated
     @email = current_user.emails.first
   end

@@ -3,19 +3,19 @@ require "nkf"
 class Category < ActiveRecord::Base
   has_many :tasks, :dependent => :nullify
   belongs_to :owner, :class_name => "User"
-  
+
   attr_accessible :name
-  
+
   validates :name, :presence => true, :length => { :maximum => 10 }
   validates :name, :uniqueness => { :case_sensitive => false }
-  
+
   before_validation :normalize_values
-  
+
   private
-  
+
   IDEOGRAPHIC_SPACE = [ 0x3000 ].pack("U")
   WHITESPACES = "[\s#{IDEOGRAPHIC_SPACE}]"
-  
+
   def normalize_values
     if name.present?
       self.name = NKF.nkf("-WwZ", name)

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_filter :prepare, :only => [ :index, :done ]
-  
+
   def index
     @tasks = @tasks.undone.page(params[:page]).limit(10)
   end
@@ -65,9 +65,9 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to :tasks
   end
-  
+
   private
-  
+
   def prepare
     if params[:category_id]
       @category = current_user.categories.find(params[:category_id])

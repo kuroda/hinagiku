@@ -1,16 +1,16 @@
 class AccountsController < ApplicationController
   skip_before_filter :authenticate_user,
     :only => [ :new, :create, :verify ]
-  skip_before_filter :reject_unverified_user  
-  
+  skip_before_filter :reject_unverified_user
+
   def show
   end
-  
+
   def new
     @user = User.new
     @user.emails.build
   end
-  
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -21,7 +21,7 @@ class AccountsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     if current_user.update_attributes(params[:user])
       redirect_to :account
@@ -29,10 +29,10 @@ class AccountsController < ApplicationController
       render :show
     end
   end
-  
+
   def thanks
   end
-  
+
   def verify
     @email = Email.find_by_id(params[:id])
     if @email.try(:verification_token) == params[:token]

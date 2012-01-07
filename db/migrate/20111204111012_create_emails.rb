@@ -8,7 +8,7 @@ class CreateEmails < ActiveRecord::Migration
 
       t.timestamps
     end
-    
+
     add_index :emails, :address, :unique => true
   end
 end

@@ -12,7 +12,7 @@ module TasksHelper
     links << delete_link(task)
     raw(links.join(" "))
   end
-  
+
   def category_options
     options = [ [ "----", nil ] ]
     current_user.categories.each do |c|

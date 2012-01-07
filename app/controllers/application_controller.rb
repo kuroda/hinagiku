@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   clear_helpers
-  
+
   before_filter :authenticate_user, :reject_unverified_user
-  
+
   rescue_from Exception, :with => :render_500
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
   rescue_from ActionController::RoutingError, :with => :render_404
-  
+
   private
   def current_user
     if session[:user_id]
@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :current_user
-  
+
   def authenticate_user
     redirect_to :new_session unless current_user
   end
-  
+
   def reject_unverified_user
     redirect_to :edit_account_initial_email unless current_user.verified?
   end

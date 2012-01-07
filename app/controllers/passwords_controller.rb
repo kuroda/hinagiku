@@ -3,7 +3,7 @@ class PasswordsController < ApplicationController
 
   def edit
   end
-  
+
 def update
   current_user.attributes = params[:user]
   current_user.changing_password = true
@@ -13,7 +13,7 @@ def update
     render :edit
   end
 end
-  
+
   def updated
   end
 end

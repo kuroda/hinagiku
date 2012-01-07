@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :tasks, :foreign_key => "owner_id", :dependent => :destroy
   has_many :categories, :foreign_key => "owner_id", :dependent => :destroy
   has_many :emails, :dependent => :destroy
-  
+
   attr_accessor :setting_password, :changing_password,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation
@@ -43,16 +43,16 @@ class User < ActiveRecord::Base
       self.password_digest = BCrypt::Password.create(password)
     end
   end
-  
+
   before_create do
     self.auto_login_token = SecureRandom.hex
   end
-  
+
   def authenticate(unencrypted_password)
     password_digest &&
       BCrypt::Password.new(password_digest) == unencrypted_password
   end
-  
+
   def verified?
     !!verified_at
   end
