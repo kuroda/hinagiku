@@ -8,12 +8,12 @@ class User < ActiveRecord::Base
   attr_accessor :setting_password, :changing_password,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation
+  alias_method :setting_password?, :setting_password
+  alias_method :changing_password? , :changing_password
   attr_accessible :login_name, :display_name,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
     :emails_attributes
-  alias_method :setting_password?, :setting_password
-  alias_method :changing_password? , :changing_password
 
   accepts_nested_attributes_for :emails
 
