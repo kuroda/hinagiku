@@ -2,7 +2,7 @@
 <ul>
   <li>
     <%= label_tag :login_name, 'ログイン名' %>
-    <%= text_field_tag :login_name %>
+    <%= text_field_tag :login_name, params[:login_name] %>
   </li>
   <li>
     <%= label_tag :password, 'パスワード' %>

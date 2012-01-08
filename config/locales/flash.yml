@@ -2,7 +2,10 @@ ja:
   flash:
     sessions:
       create:
+        notice: ログインしました。
         alert: ログイン名またはパスワードが正しくありません。
+      destroy:
+        notice: ログアウトしました。
     accounts:
       update:
         notice: アカウント情報を変更しました。

@@ -10,9 +10,10 @@ class SessionsController < ApplicationController
         cookies.permanent.
           signed[:auto_login_token] = user.auto_login_token
       end
+      flash.notice = t("flash.sessions.create.notice")
       redirect_to :root
     else
-      flash.now.alert = t('flash.sessions.create.alert')
+      flash.now.alert = t("flash.sessions.create.alert")
       render :new
     end
   end
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
     cookies.delete(:user_id)
     cookies.delete(:auto_login_token)
+    flash.notice = t("flash.sessions.destroy.notice")
     redirect_to :new_session
   end
 end
