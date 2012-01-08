@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
   has_many :categories, :foreign_key => "owner_id", :dependent => :destroy
   has_many :emails, :dependent => :destroy
 
-  attr_accessor :setting_password, :changing_password,
-    :password, :password_confirmation,
+  attr_accessor :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation
-  alias_method :setting_password?, :setting_password
-  alias_method :changing_password? , :changing_password
+  attr_writer :setting_password, :changing_password
+  def setting_password?; @setting_password; end
+  def changing_password?; @changing_password; end
   attr_accessible :login_name, :display_name,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
