@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_writer :setting_password, :changing_password
   def setting_password?; @setting_password; end
   def changing_password?; @changing_password; end
+  alias_method :verified?, :verified_at
   attr_accessible :login_name, :display_name,
     :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
@@ -51,9 +52,5 @@ class User < ActiveRecord::Base
   def authenticate(unencrypted_password)
     password_digest &&
       BCrypt::Password.new(password_digest) == unencrypted_password
-  end
-
-  def verified?
-    !!verified_at
   end
 end
