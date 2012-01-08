@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       end
       redirect_to :root
     else
+      flash.now.alert = t('flash.sessions.create.alert')
       render :new
     end
   end

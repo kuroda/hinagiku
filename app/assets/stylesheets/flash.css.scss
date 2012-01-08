@@ -1,0 +1,15 @@
+p.flash_notice, p.flash_alert {
+  text-align: center;
+  padding: 4px;
+  margin: 10px 50px;
+}
+
+p.flash_notice {
+  background-color: #4c4;
+  color: #fff;
+}
+
+p.flash_alert {
+  background-color: #c44;
+  color: #fff;
+}

@@ -1,0 +1,8 @@
+ja:
+  flash:
+    sessions:
+      create:
+        alert: ログイン名またはパスワードが正しくありません。
+    accounts:
+      update:
+        notice: アカウント情報を変更しました。
