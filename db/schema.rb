@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(:version => 20111223141416) do
   end
 
   create_table "emails", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "address"
-    t.string   "verification_token"
+    t.integer  "user_id",            :null => false
+    t.string   "address",            :null => false
+    t.string   "verification_token", :null => false
     t.datetime "verified_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
 
-  add_index "emails", ["address"], :name => "index_emails_on_address", :unique => true
+  add_index "emails", ["address"], :name => "index_emails_on_address"
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
