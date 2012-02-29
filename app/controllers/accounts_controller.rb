@@ -12,6 +12,7 @@ class AccountsController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.setting_password = true
     if @user.save
       AccountMailer.email_verification(@user.emails.first).deliver
       session[:user_id] = @user.id
