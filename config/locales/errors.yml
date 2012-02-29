@@ -12,9 +12,11 @@ ja:
               taken: "「%{value}」は重複しています。"
         email:
           attributes:
-            lower_case_address:
+            address:
               taken: "「%{value}」は他のユーザーが使用しています。"
         user:
           attributes:
+            login_name:
+              taken: "「%{value}」は他のユーザーが使用しています。"
             current_password:
               invalid: "が正しくありません。"
