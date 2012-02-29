@@ -5,9 +5,13 @@ div.field_with_errors label {
   font-weight: bold;
 }
 
-div.field_with_errors input[type=text],
-div.field_with_errors textarea {
-  background-color: #fe8;
+div.field_with_errors {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    background-color: #fe8;
+  }
 }
 
 ul.error_messages {

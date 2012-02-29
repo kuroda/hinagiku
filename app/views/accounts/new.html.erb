@@ -1,5 +1,7 @@
 <%= form_for @user, :url => :account do |form| %>
-<%= render "shared/error_messages", :object => form.object %>
+<%= render "shared/ordered_error_messages", :object => form.object,
+  :attribute_names => [ :login_name, :display_name, :"emails.address",
+                        :password, :password_confirmation ] %>
 <ul>
   <li>
     <%= form.label :login_name %>
