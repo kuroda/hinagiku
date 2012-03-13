@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
     cookies.delete(:user_id)
     cookies.delete(:auto_login_token)
     flash.notice = t("flash.sessions.destroy.notice")
-    redirect_to :new_session
+    redirect_to [ :new, :session ]
   end
 end

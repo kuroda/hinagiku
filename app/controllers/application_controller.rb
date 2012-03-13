@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authenticate_user
-    redirect_to :new_session unless current_user
+    redirect_to [ :new, :session ] unless current_user
   end
 
   def reject_unverified_user
-    redirect_to :edit_account_initial_email unless current_user.verified?
+    redirect_to [ :edit, :account, :initial_email ] unless current_user.verified?
   end
 
   def render_404(exception)
