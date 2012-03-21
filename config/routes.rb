@@ -19,7 +19,7 @@ Hinagiku::Application.routes.draw do
       get :updated
     end
   end
-  get "v/:id/:token" => "accounts#verify",
+  get "v/:id/:token" => "emails#verify",
     :id => /\d+/, :token => /[0-9a-f]+/,
     :as => :email_verification
 
