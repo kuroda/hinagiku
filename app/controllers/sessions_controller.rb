@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       if params[:remember_me]
         cookies.permanent.signed[:user_id] = user.id
-        cookies.permanent.
-          signed[:auto_login_token] = user.auto_login_token
+        cookies.permanent.signed[:auto_login_token] = user.auto_login_token
       end
       flash.notice = t("flash.sessions.create.notice")
       redirect_to :root
