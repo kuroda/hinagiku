@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :emails
 
   validates :login_name, :presence => true, :length => { :maximum => 20 },
-    :uniqueness => true
+    :uniqueness => { :case_sensitive => false }
   validates :display_name, :presence => true, :length => { :maximum => 20 }
   validates :password, :presence => { :if => :setting_password? }
   validates :current_password, :new_password,
