@@ -22,13 +22,6 @@ Hinagiku::Application.routes.draw do
   get "v/:id/:token" => "accounts#verify",
     :id => /\d+/, :token => /[0-9a-f]+/,
     :as => :email_verification
-  get "password_recovery/start"
-  post "password_recovery/send_token"
-  get "p/:id/:token" => "password_recovery#continue",
-    :id => /\d+/, :token => /[0-9a-f]+/,
-    :as => :password_recovery_continue
-  post "password_recovery/execute"
-  get "password_recovery/done"
 
   match "*anything" => "errors#not_found"
 end
