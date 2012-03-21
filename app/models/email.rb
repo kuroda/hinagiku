@@ -3,8 +3,7 @@ class Email < ActiveRecord::Base
 
   attr_accessible :address
 
-  validates :address, :presence => true,
-    :uniqueness => { :case_sensitive => false }
+  validates :address, :presence => true, :uniqueness => { :case_sensitive => false }
 
   before_save do
     if address_changed?
