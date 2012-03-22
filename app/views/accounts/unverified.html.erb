@@ -4,13 +4,13 @@
 <p>すでにお送りした確認メールの本文に記載されたURLにアクセスしてください。</p>
 <p>あるいは、次のフォームから確認メールを再送信してください。</p>
 
-<%= form_for @email, :url => [ :account, :initial_email ] do |form| %>
+<%= form_for @email do |form| %>
 <%= render "shared/error_messages", :object => form.object %>
 <ul>
   <li>
     <%= form.label :address %>
     <%= form.text_field :address %>
   </li>
-  <li><%= form.submit "再送信" %></li>
+  <li class="buttons"><%= form.submit "再送信" %></li>
 </ul>
 <% end %>

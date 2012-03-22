@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_unverified_user
-    redirect_to [ :edit, :account, :initial_email ] unless current_user.verified?
+    redirect_to [ :unverified, :account ] unless current_user.verified?
   end
 
   def render_404(exception)

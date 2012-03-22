@@ -32,5 +32,10 @@ class AccountsController < ApplicationController
   end
 
   def thanks
+    @email = current_user.emails.first
+  end
+  
+  def unverified
+    @email = current_user.emails.first
   end
 end
