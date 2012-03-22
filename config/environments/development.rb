@@ -34,8 +34,13 @@ Hinagiku::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # config.assets.logger = false
+  
+  config.action_mailer.logger = 
+    Logger.new(Rails.root.join("log/action_mailer.development.log"))
 
   config.action_mailer.default_url_options = {
-    :host => 'localhost', :port => '3000'
+    :host => "localhost", :port => "3000"
   }
 end
