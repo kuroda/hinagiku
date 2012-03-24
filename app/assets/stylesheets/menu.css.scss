@@ -1,12 +1,11 @@
-ul.user_menu_items {
-  float: right;
+ul.user_menu_items, ul.menu_items {
   list-style: none;
-  margin-top: 54px;
-  padding: 10px;
   color: #444;
   
   li {
     display: inline-block;
+    *display: inline;
+    *zoom: 1;
     padding: 5px;
     
     a {
@@ -16,20 +15,15 @@ ul.user_menu_items {
   }
 }
 
-ul.menu_items {
-  list-style: none;
+ul.user_menu_items {
+  float: right;
+  margin-top: 54px;
+  padding: 10px;
   color: #444;
+}
+
+ul.menu_items {
   border: dotted #ccc 1px;
   margin: 0 10px;
   padding: 2px 5px;
-  
-  li {
-    display: inline-block;
-    padding: 5px;
-    font-size: 90%;
-    
-    a {
-      font-weight: normal;
-    }
-  }
 }

@@ -9,8 +9,15 @@ div#wrapper {
 }
 
 div#header {
+  height: 96px;
   background-color: #f2c11c;
   border-bottom: solid 24px #f5d421;
+  
+  a {
+    img {
+      float: left;
+    }
+  }
 }
 
 div#footer {
