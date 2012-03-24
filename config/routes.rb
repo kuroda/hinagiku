@@ -12,9 +12,9 @@ Hinagiku::Application.routes.draw do
   resource :session, :only => [ :new, :create, :destroy ]
   resource :account, :except => [ :edit ] do
     get :thanks, :unverified
-    resource :password, :only => [ :edit, :update ] do
-      get :updated
-    end
+  end
+  resource :password, :only => [ :edit, :update ] do
+    get :updated
   end
   resources :emails, :only => [ :update ] do
     get :updated, :on => :member

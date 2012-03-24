@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   def setting_password?; @setting_password; end
   def changing_password?; @changing_password; end
   def verified?; verified_at.present?; end
-  attr_accessible :login_name, :display_name,
-    :password, :password_confirmation,
+  attr_accessible :login_name, :display_name, :password, :password_confirmation,
     :current_password, :new_password, :new_password_confirmation,
     :emails_attributes
 
@@ -28,10 +27,8 @@ class User < ActiveRecord::Base
     :confirmation => true
 
   validate do
-    if changing_password?
-      unless authenticate(current_password)
-        errors.add(:current_password, :invalid)
-      end
+    if changing_password? && !authenticate(current_password)
+      errors.add(:current_password, :invalid)
     end
   end
 

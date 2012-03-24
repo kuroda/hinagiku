@@ -2,7 +2,7 @@
 
 <%= render "accounts/menu" %>
 
-<%= form_for current_user, :url => [ :account, :password ] do |form| %>
+<%= form_for current_user, :url => :password do |form| %>
 <%= render "shared/error_messages", :object => form.object %>
 <ul>
   <li>
