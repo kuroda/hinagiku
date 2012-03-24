@@ -45,7 +45,7 @@ GEM
       treetop (~> 1.4.8)
     mail-iso-2022-jp (1.1.5)
       mail (>= 2.2.5)
-    mime-types (1.17.2)
+    mime-types (1.18)
     multi_json (1.1.0)
     polyglot (0.3.3)
     rack (1.4.1)
