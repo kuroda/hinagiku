@@ -5,8 +5,7 @@
   user.password = "opensesame!"
   user.setting_password = true
   user.save!
-  email = Email.new(
-    :address => user.login_name + "@example.com")
+  email = Email.new(:address => user.login_name + "@example.com")
   email.verified_at = Time.current if index <= 1
   user.emails << email
 end
