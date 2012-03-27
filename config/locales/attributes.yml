@@ -12,7 +12,6 @@ ja:
       user:
         login_name: ログイン名
         display_name: 表示用の名前
-        address: メールアドレス
         password: パスワード
         password_confirmation: パスワードの確認
         current_password: 現在のパスワード
