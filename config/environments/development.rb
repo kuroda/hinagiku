@@ -22,7 +22,7 @@ Hinagiku::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  # Raise exception on mass assignment protection for ActiveRecord models
+  # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
   # Log the query plan for queries taking more than this (works
@@ -34,13 +34,4 @@ Hinagiku::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  # config.assets.logger = false
-  
-  config.action_mailer.logger = 
-    Logger.new(Rails.root.join("log/action_mailer.development.log"))
-
-  config.action_mailer.default_url_options = {
-    :host => "localhost", :port => "3000"
-  }
 end
