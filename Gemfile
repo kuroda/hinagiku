@@ -12,3 +12,15 @@ gem 'mail-iso-2022-jp'
 group :assets do
   gem 'sass-rails'
 end
+
+group :test do
+  gem 'rspec', '~> 2.12.0'
+  gem 'rspec-rails', '~> 2.12.0'
+  gem 'rspec-given', '~> 2.2.0'
+  gem 'mocha', '~> 0.12.7', require: false
+  gem 'bourne', '~> 1.2.1'
+  gem 'capybara', '~> 1.1.3'
+  gem 'capybara-webkit', '~> 0.12.1'
+  gem 'connection_pool', '~> 0.9.2'
+  gem 'factory_girl_rails', '~> 4.1.0'
+end
